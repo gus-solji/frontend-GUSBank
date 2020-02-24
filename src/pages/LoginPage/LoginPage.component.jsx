@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import './LoginPage.scss';
 import LoginForm from '../../components/Login/LoginForm.component';
 
+
 const LoginPage = () => {
     return ( 
         <Fragment>

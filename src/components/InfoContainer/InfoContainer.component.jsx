@@ -13,7 +13,7 @@ const InfoContainer = () => {
                         <div className="text-container__paragraph">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nulla dicta consequatur sint itaque, provident atque suscipit aspernatur explicabo quaerat magnam? Maxime id repellendus hic, assumenda pariatur ut nesciunt soluta!</p>
                         </div>
-                        <a className="text-container__link" href="https://homebusinessmag.com/money/personal-finance/10-important-benefits-saving-money/" target="_blank">Read More</a>
+                        <a className=" btn btn-md text-container__link" href="https://homebusinessmag.com/money/personal-finance/10-important-benefits-saving-money/" target="_blank">Read More</a>
                     </div>
                 </div>
                 <div className="col-md-6 info-container__row-img">

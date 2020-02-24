@@ -1,0 +1,17 @@
+.register-form-container{
+    
+
+    &__title{
+    display: flex;
+    margin-top: 10px;
+    }
+   
+    &__form{
+        &-bg{
+            background-color: #172A3A;
+            color:white;
+            margin-top: 10px;
+        }
+    }
+    
+}
