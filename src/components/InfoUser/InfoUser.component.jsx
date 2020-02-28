@@ -16,7 +16,7 @@ const InfoUser = ({user}) => {
                     <h6><span>Address:</span> {address}</h6>
                 </div>
                 <div className="info-user__data-info">
-                    <h6><span>Id Number</span> {idCard}</h6>
+                    <h6><span>Id Number:</span> {idCard}</h6>
                 </div>
                 <div className="info-user__data-info">
                     <h6><span>Email:</span>  {email}</h6>

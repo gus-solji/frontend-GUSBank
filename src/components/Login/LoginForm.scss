@@ -41,6 +41,19 @@
                     background-color: #172A3A;
                     color: white;
                 }
+
+            }
+
+            &-cancel{
+                background-color: red;
+            border:none;
+            margin-top: 20px;
+            color: white;
+
+            &:hover{
+                background-color: red;
+                color: white;
+            }
             }
 
             &-link{

@@ -3,13 +3,13 @@ import './TransferContainer.scss';
 import TransactionForm from '../TransactionFormAndView/TransactionForm';
 import TransactionSelection from '../TransactionFormAndView/TransactionSelection';
 
-const TransferContainer = () => {
+const TransferContainer = ({history}) => {
     return ( 
         <div className="container">
             <div className="row">
                 <div className="transfer-container">
                    {/* <TransactionSelection></TransactionSelection> */}
-                   <TransactionForm></TransactionForm>
+                   <TransactionForm history={history}></TransactionForm>
                 </div>
             </div>
         </div>

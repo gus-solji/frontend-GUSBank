@@ -12,10 +12,10 @@ const SideBarMenu = () => {
                     <h5 className="sidebar__header-name">GSJ Bank</h5>
                 </header>
                 <Link className="sidebar__link" to="/dashboard"><i className="sidebar__link-icon las la-file-invoice-dollar"></i><span className="sidebar__link-span">Summary</span></Link>
-                <Link className="sidebar__link" to="/dashboard/create-account"><i className="sidebar__link-icon las la-piggy-bank"></i><span className="sidebar__link-span">Accounts</span></Link>
-                <Link className="sidebar__link" to="/dashboard/create-account"><i className="sidebar__link-icon las la-bookmark"></i><span className="sidebar__link-span">Favorites</span></Link>
+                {/* <Link className="sidebar__link" to="/dashboard/create-account"><i className="sidebar__link-icon las la-piggy-bank"></i><span className="sidebar__link-span">Accounts</span></Link>
+                <Link className="sidebar__link" to="/dashboard/create-account"><i className="sidebar__link-icon las la-bookmark"></i><span className="sidebar__link-span">Favorites</span></Link> */}
                 <Link className="sidebar__link" to="/dashboard/transfer-money"><i className="sidebar__link-icon las la-exchange-alt"></i><span className="sidebar__link-span">Transfer</span></Link>
-                <Link className="sidebar__link" to="/dashboard/create-account"><i className="sidebar__link-icon las la-money-bill-wave"></i><span className="sidebar__link-span">Pay Services</span></Link>
+                {/* <Link className="sidebar__link" to="/dashboard/create-account"><i className="sidebar__link-icon las la-money-bill-wave"></i><span className="sidebar__link-span">Pay Services</span></Link> */}
                 <Link className="sidebar__link" to="/dashboard/profile"><i className="sidebar__link-icon las la-address-card"></i><span className="sidebar__link-span">Profile</span></Link>
             </div>
         </Fragment>
