@@ -10,13 +10,16 @@
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        height: 200px;
+        height: 300px;
         padding: 0;
 
         &-exchange{
 
+            width: 400px;
+            
             &-text{
                 color:white;
+                text-align: center;
             }
         }
 
@@ -34,6 +37,9 @@
             background-position: center center;
             background-size: cover;
             background-attachment: fixed;
+            margin-bottom: -3px;
+            margin-left: -3px;
+            margin-right: -3px;
         }
 
     }

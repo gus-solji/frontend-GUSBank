@@ -1,0 +1,55 @@
+.dashnav{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 49px;
+
+
+    &__content{
+
+
+        &-greeting{
+            font-size: 15px;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        &-lastlogin{
+            font-size: 12px;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+    }
+
+    &__button{
+        color:white;
+        font-size: 25px;
+        background-color: #004346;
+        width: 40px;
+        height: 40px;
+        border-radius: 10%;
+        border:none;
+        margin-right: 90px;
+    }
+}
+
+
+@media (max-width: 860px){
+
+
+    .dashnav{
+   
+        &__button{
+            color:white;
+            font-size: 25px;
+            background-color: #004346;
+            width: 40px;
+            height: 40px;
+            border-radius: 10%;
+            border:none;
+            margin-right: 60px;
+        }
+    }
+}

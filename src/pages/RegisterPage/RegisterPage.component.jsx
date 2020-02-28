@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import RegisterForm from '../../components/RegisterForm/RegisterForm.component'
+import NavBar from '../../components/NavBar/NavBar.component';
 
-const RegisterPage = () => {
+const RegisterPage = ({history}) => {
     return ( 
-        <div className="container">
-            <RegisterForm></RegisterForm>
-        </div>
+        <Fragment>
+            <NavBar></NavBar>
+            <div className="container">
+                <RegisterForm history={history}></RegisterForm>
+            </div>
+        </Fragment>
+        
     );
 }
  

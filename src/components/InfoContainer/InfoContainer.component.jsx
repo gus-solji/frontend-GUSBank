@@ -9,7 +9,7 @@ const InfoContainer = () => {
                 <div className="col-md-6 info-container__row-text">
                     <div className="text-container">   
                         <h1 className="text-container__title">Do you save money?</h1>
-                        <h2 className="text-container__title">Read about how save money</h2>
+                        <h2 className="text-container__title">Read about how to save money</h2>
                         <div className="text-container__paragraph">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nulla dicta consequatur sint itaque, provident atque suscipit aspernatur explicabo quaerat magnam? Maxime id repellendus hic, assumenda pariatur ut nesciunt soluta!</p>
                         </div>

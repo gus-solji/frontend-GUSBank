@@ -1,0 +1,36 @@
+.myaccounts-container{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 5px  #666;
+    width: 100%;
+    
+
+    &__header{
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        &-left{
+            // margin-left: 15px;
+            &-icon{
+                padding-right: 13px;
+                color: #09BC8A;
+            }
+
+            &-title{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+        }
+
+        &-rigth{
+            // margin-right: 15px;
+            padding: 4px;
+        }
+    }
+
+    &__list{
+        width: 100%;
+    }
+}

@@ -16,9 +16,9 @@ const NavBar = () => {
                     <li className="nav-item active pr-md-2">
                         <Link className="nav-link logo-text link-effect" to="/signin">Sign in</Link>
                     </li>
-                    <li className="nav-item active pr-md-2">
+                    {/* <li className="nav-item active pr-md-2">
                         <Link className="nav-link logo-text link-effect" to="/about-us">About us</Link>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </nav>

@@ -1,0 +1,33 @@
+.error-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+    &__div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        &-img{
+            width: 80%;
+            height: 80%;
+            margin-bottom: 20px;
+        }
+
+        &-title{
+            margin-bottom: 20px;
+        }
+
+        &-button{
+            color: white;
+            background-color: #172A3A;
+
+            &:hover{
+                color: white;
+            }
+        }
+
+    }
+}
