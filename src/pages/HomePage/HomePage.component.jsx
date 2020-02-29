@@ -58,21 +58,26 @@ const HomePage = () => {
                 {
                   id: '2',
                   options: [
-                    { value: 1, label: 'Number 1', trigger: '4' },
-                    { value: 2, label: 'Number 2', trigger: '3' },
-                    { value: 3, label: 'Number 3', trigger: '3' },
+                    { value: 1, label: 'Info about', trigger: '5' },
+                    { value: 2, label: 'Products', trigger: '3' },
+                    { value: 3, label: 'End', trigger: '5' },
                   ],
                 },
                 {
                   id: '3',
-                  message: 'Wrong answer, try again.',
+                  message: ' Accounts, Favorites Accouns, Transactions',
                   trigger: '2',
                 },
                 {
                   id: '4',
-                  message: 'Awesome! You are a telepath!',
+                  message: 'Enjoy! And join us!',
                   end: true,
                 },
+                {
+                  id: '5',
+                  message: 'We are a digital bank',
+                  trigger: '2',
+                }
               ]}
   />
     </ThemeProvider>

@@ -8,13 +8,13 @@
     {
         "id": 2,
         "urlImg": "assets/img/tree.png",
-        "title": "Person",
-        "text": "Our prinpipal target is help you with..sdsdsads."
+        "title": "Plant trees",
+        "text": "Love the nature."
     },
     {
         "id": 3,
         "urlImg": "assets/img/chart.png",
-        "title": "Person",
-        "text": "Our prinpipal target is help you with...sdsdss"
+        "title": "Grow",
+        "text": "Grown together"
     }
 ]

@@ -9,6 +9,7 @@ import PrincipalContent from '../PrincipalContent/PrincipalContent';
 import FavoriteAccount from '../../components/CreateFavoriteAccount/FavoriteAccount';
 import TransferContainer from '../../components/TransferContainer/TransferContainer.component';
 import Profile from '../../components/Profile/Profile.component';
+import DetailPage from '../DetailAccountPage/DetailAccountPage';
 
 const DashboardPage = ({history}) => {
 
@@ -25,6 +26,7 @@ const DashboardPage = ({history}) => {
                         <ProtectedRoute exact path="/dashboard/create-favorite-account" component={FavoriteAccount}/>
                         <ProtectedRoute exact path="/dashboard/transfer-money" component={TransferContainer}/>
                         <ProtectedRoute exact path="/dashboard/profile" component={Profile}/>
+                        <ProtectedRoute exact path="/dashboard/account-detail/:accountId" component={DetailPage}></ProtectedRoute>
                     </Switch>
                 </div> 
             </div>

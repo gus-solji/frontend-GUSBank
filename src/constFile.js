@@ -16,3 +16,6 @@ export const POST_USER = `${DEV_URL}/api/v1/user/`;
 export const GET_OWN_ACCOUNTS = `${DEV_URL}/api/v1/account/byBalance/`;
 export const GET_ACCOUNT_BY_ACCOUNT = `${DEV_URL}/api/v1/account/byIbanNumber/`;
 export const PUT_NEW_PASSWORD = `${DEV_URL}/api/v1/user/`;
+export const POST_MOVEMENT = `${DEV_URL}/api/v1/account-movement/`;
+export const POST_OWN_MOVEMENT = `${DEV_URL}/api/v1/account-movement/own`;
+export const GET_TRANSACTION_BY_ACCOUNT_ID = `${DEV_URL}/api/v1/account-movement/byAccountId/`

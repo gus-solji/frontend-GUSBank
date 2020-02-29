@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import './Transaction.scss';
-import { KEY_USERID,GET_OWN_ACCOUNTS,GET_ACCOUNTS_USER_URL,GET_FAVORITE_ACCOUNTS_URL,GET_ACCOUNT_BY_ACCOUNT} from '../../constFile';
+import { POST_OWN_MOVEMENT,POST_MOVEMENT, KEY_RATE,KEY_USERID,GET_OWN_ACCOUNTS,GET_ACCOUNTS_USER_URL,GET_FAVORITE_ACCOUNTS_URL,GET_ACCOUNT_BY_ACCOUNT} from '../../constFile';
 import Axios from 'axios';
 import { useAlert } from "react-alert";
 
@@ -20,6 +20,11 @@ const TransactionForm = ({history}) => {
     const [isDisableFA ,setIsDisableFA] = useState(false);
     const [verify, setVerify] = useState(false);
     const [originAccountInfo,setOriginAccountInfo] = useState({});
+    const [finalMovement,setFinalMovement] = useState({});
+    const exchangeRate = JSON.parse(localStorage.getItem(KEY_RATE));
+    const sell = parseFloat(exchangeRate.venta);
+    const buy = parseFloat(exchangeRate.compra);
+    var amount;
 
     const getOriginalStates = () => {
         setOwnAccounts(false);
@@ -38,7 +43,7 @@ const TransactionForm = ({history}) => {
 
     },[]);
 
-    const {originAccount,finalAccount} = movement;
+    const {originAccount,finalAccount,balance,description} = movement;
 
     const handleChange = e => {
         setMovement({
@@ -111,18 +116,158 @@ const TransactionForm = ({history}) => {
         .catch(error => console.log(error));
     }
 
+    const saveTransaction = finalMovement => {
+        const url = POST_MOVEMENT;
+        Axios.post(url,finalMovement)
+        .then(res => { 
+            console.log(res)
+            alert.success('Good transaction');
+            history.push('/dashboard');
+        }
+        )
+        .catch(error => console.log(error));
+    }
+
+    const saveOwnTransaction = finalMovement => {
+        const url = POST_OWN_MOVEMENT;
+        Axios.post(url,finalMovement)
+        .then(res => { 
+            console.log(res)
+            alert.success('Good transaction');
+            history.push('/dashboard');
+        }
+        )
+        .catch(error => console.log(error));
+    }
+
     const submitTransaction =  e => {
         e.preventDefault();
 
-        if(finalAccount.includes('CR') || finalAccount.includes('USD')){
-            console.log('Cuentas propias');
-        }else{
-            console.log('Cuentas favoritas');
+        if(originAccount === finalAccount){
+            alert.error('Accounts are the same,change one');
+            return;
         }
 
-        
 
-       
+        if(finalAccount.includes('CR') || finalAccount.includes('USD')){
+
+            if(balance.trim() === '' || description.trim() === ''){
+                alert.error('Empty amount or description');
+                return;
+            }
+
+            if(movement.originAccount.includes('CR') && movement.finalAccount.includes('CR')){
+               
+                if(parseFloat(movement.balance) > originAccountInfo.balance){
+                    alert.error('Not enough funds');
+                    return;
+                }else{
+                    amount = parseFloat(movement.balance);
+                    console.log(amount);
+
+                    finalMovement.originAccount = movement.originAccount;
+                    finalMovement.finalAccount = movement.finalAccount;
+                    finalMovement.detail = movement.description;
+                    finalMovement.balance = amount;
+                    const date = new Date();
+                    finalMovement.date = date;
+                    finalMovement.accountId = originAccountInfo.id;
+                    console.log(finalMovement);
+                    saveOwnTransaction(finalMovement);
+              }  
+            }
+ 
+            if(movement.originAccount.includes('CR') && movement.finalAccount.includes('USD')){
+                if(parseFloat(movement.balance) > originAccountInfo.balance){
+                    alert.error('Not enough funds');
+                    return;
+                }else{
+                    amount = parseFloat(movement.balance);
+                    console.log(amount);
+
+                    finalMovement.originAccount = movement.originAccount;
+                    finalMovement.finalAccount = movement.finalAccount;
+                    finalMovement.detail = movement.description;
+                    finalMovement.balance = parseFloat((amount/buy).toFixed(2));
+                    const date = new Date();
+                    finalMovement.date = date;
+                    finalMovement.accountId = originAccountInfo.id;
+                    console.log(finalMovement);
+                    saveOwnTransaction(finalMovement);
+              }  
+            }
+
+            if(movement.originAccount.includes('USD') && movement.finalAccount.includes('CR')){
+                
+                if(parseFloat(movement.balance) > originAccountInfo.balance){
+                    alert.error('Not enough funds');
+                    return;
+                }else{
+                    amount = parseFloat(movement.balance);
+                    
+
+                    finalMovement.originAccount = movement.originAccount;
+                    finalMovement.finalAccount = movement.finalAccount;
+                    finalMovement.detail = movement.description;
+                    finalMovement.balance =(amount*buy).toFixed(2);
+                    const date = new Date();
+                    finalMovement.date = date;
+                    finalMovement.accountId = originAccountInfo.id;
+                    console.log(finalMovement);
+                    saveOwnTransaction(finalMovement);
+              }  
+            }
+
+            if(movement.originAccount.includes('USD') && movement.finalAccount.includes('USD')){
+                console.log("Dolares a Dolares")
+                amount = parseFloat(movement.balance);
+            
+                finalMovement.originAccount = movement.originAccount;
+                finalMovement.finalAccount = movement.finalAccount;
+                finalMovement.detail = movement.description;
+                finalMovement.balance = amount;
+                const date = new Date();
+                finalMovement.date = date;
+                finalMovement.accountId = originAccountInfo.id;
+                saveOwnTransaction(finalMovement);
+            }
+            
+        }else{
+            if(movement.originAccount.includes('CR')){
+                  if(parseFloat(movement.balance) > originAccountInfo.balance){
+                        alert.error('Not enough funds');
+                        return;
+                  }else{
+                        amount = parseFloat(movement.balance);
+                        console.log(amount);
+
+                        finalMovement.originAccount = movement.originAccount;
+                        finalMovement.finalAccount = movement.finalAccount;
+                        finalMovement.detail = movement.description;
+                        finalMovement.balance = amount;
+                        const date = new Date();
+                        finalMovement.date = date;
+                        finalMovement.accountId = originAccountInfo.id;
+                        saveTransaction(finalMovement);
+                  }  
+            }else{
+                    if(parseFloat(movement.balance) > originAccountInfo.balance){
+                        alert.error('Not enough funds');
+                        return;
+                    }else{
+                        amount = parseFloat(movement.balance * buy);
+                        finalMovement.originAccount = movement.originAccount;
+                        finalMovement.finalAccount = movement.finalAccount;
+                        finalMovement.detail = movement.description;
+                        finalMovement.balance = amount;
+                        const date = new Date();
+                        finalMovement.date = date;
+                        finalMovement.accountId = originAccountInfo.id;
+                        saveTransaction(finalMovement);
+                    
+                    }
+            }
+        }
 
         // setMovement({
         //     originAccount: '', balance: '', finalAccount: '',description:''

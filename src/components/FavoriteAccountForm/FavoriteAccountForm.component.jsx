@@ -4,7 +4,7 @@ import { useAlert } from "react-alert";
 import { KEY_USERID,POST_FAVORITE_ACCOUNTS_URL } from '../../constFile';
 import Axios from 'axios';
 
-const FavoriteAccountForm = () => {
+const FavoriteAccountForm = ({history}) => {
 
     const alert = useAlert();
     const [newFavoriteAccount, setNewFavoriteAccount] = useState({ownerName: '', accountNumber: '',bankName:'', userId: '', currency:''});
@@ -47,6 +47,8 @@ const FavoriteAccountForm = () => {
           console.log(res.data);
 
           alert.success('Account created!!');
+
+          history.push('/dashboard');
 
         }).catch(error => console.log(error))
 

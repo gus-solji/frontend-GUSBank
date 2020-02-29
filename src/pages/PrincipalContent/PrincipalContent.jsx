@@ -40,6 +40,8 @@ const PrincipalContent = () => {
         )
         .catch(error => console.log(error));
     }
+    
+   
 
     return (
         <div className="principal-container">

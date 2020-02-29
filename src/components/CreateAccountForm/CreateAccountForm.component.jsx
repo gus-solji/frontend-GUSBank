@@ -5,7 +5,7 @@ import { POST_ACCOUNT_URL,KEY_USERID } from '../../constFile';
 import Axios from 'axios';
 
 
-const CreateAccountForm = () => {
+const CreateAccountForm = ({history}) => {
 
     const alert = useAlert();
     const [newAccount, setNewAccount] = useState(
@@ -78,6 +78,8 @@ const CreateAccountForm = () => {
           console.log(res.data);
 
           alert.success('Account created!!');
+
+          history.push('/dashboard');
 
         }).catch(error => console.log(error))
 
