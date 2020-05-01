@@ -1,0 +1,22 @@
+.dashboard-container{
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: space-between;
+
+  &__accounts{
+      width: 100%;
+      overflow-y: auto;
+
+      &-content{
+          display: flex;
+          margin-top:50px;
+          margin-left: 50px;
+          margin-right: 50px;
+      }
+     
+    &__nav{
+       position: fixed;
+    }
+  }
+}

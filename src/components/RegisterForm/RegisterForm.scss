@@ -1,0 +1,32 @@
+.register-form-container{
+    
+
+    &__title{
+    display: flex;
+    margin-top: 10px;
+    }
+   
+    &__form{
+        &-bg{
+            background-color: #172A3A;
+            color:white;
+            margin-top: 10px;
+
+            &:hover{
+                color:white;
+            }
+        }
+    }
+    
+    
+}
+
+.addres-text{
+    resize: none;
+}
+
+.error-message{
+    color:red;
+    font-size: 15px;
+    
+}

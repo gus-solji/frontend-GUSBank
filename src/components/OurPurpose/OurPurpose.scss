@@ -1,0 +1,39 @@
+.our-purpose-container{
+    margin-top: 100px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    &__content{
+        margin-top: 30px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-around ;
+        flex-wrap: wrap;
+        width: 100%;
+
+        &-simbol{
+            
+            margin-bottom: 45px;
+
+            &-img{
+                display: flex;
+                justify-content: center;
+            }
+
+            &-title{
+                display: flex;
+                justify-content: center;
+            }
+
+            &-text{
+              
+                  text-align: center;
+
+            }
+        }
+    }
+
+}

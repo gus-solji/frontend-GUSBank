@@ -1,0 +1,46 @@
+.wave-container{
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+
+    &__content{
+        background-color: #004346;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        height: 300px;
+        padding: 0;
+
+        &-exchange{
+
+            width: 400px;
+            
+            &-text{
+                color:white;
+                text-align: center;
+            }
+        }
+
+       
+    }
+
+    &__img{
+        padding: 0;
+        overflow: hidden;
+    
+
+        &-photo{
+            overflow: hidden;
+            padding: 0;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            margin-bottom: -3px;
+            margin-left: -3px;
+            margin-right: -3px;
+        }
+
+    }
+}

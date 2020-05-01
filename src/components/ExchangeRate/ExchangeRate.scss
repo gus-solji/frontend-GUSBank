@@ -1,0 +1,60 @@
+  .exchange-rate-title{
+        text-align: center;
+        color: white;
+  }
+    
+  .exchange-rate-container {
+    background-color: #fff;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+
+    &.exchange-rate-container > div:first-of-type {
+        border-right: 1px solid #dedede;
+    }
+
+    &__dollar{
+        flex: 1;
+        text-align: center;
+
+        &-title-buy {
+            margin: 0;
+            text-transform: uppercase;
+            border-bottom: 1px solid;
+            margin-bottom: 10px;
+            margin-right: 10px;
+        }
+
+        &-title-sell {
+            margin: 0;
+            text-transform: uppercase;
+            border-bottom: 1px solid;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }          
+
+        &-money-buy{
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin: 5px 0;
+            color: #09BC8A;
+        }
+
+        &-money-sell{
+            font-size: 20px;
+            letter-spacing: 1px;
+            font-weight: bold;
+            margin: 5px 0;
+            color: #09BC8A;
+        }
+
+    }
+
+  }
+  
+
+  

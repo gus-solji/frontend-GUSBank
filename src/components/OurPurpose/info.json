@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "urlImg": "assets/img/target.png",
+        "title": "Person",
+        "text": "Our prinpipal target is help you with...sdhasjdas"
+    },
+    {
+        "id": 2,
+        "urlImg": "assets/img/tree.png",
+        "title": "Plant trees",
+        "text": "Love the nature."
+    },
+    {
+        "id": 3,
+        "urlImg": "assets/img/chart.png",
+        "title": "Grow",
+        "text": "Grown together"
+    }
+]

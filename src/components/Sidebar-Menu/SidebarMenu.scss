@@ -1,0 +1,116 @@
+.sidebar{
+    width: 235px;
+    height: 100%;
+    background-color: #172A3A;
+
+    &__header{
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        color:white;
+        font-size: 25px;
+        line-height: 60px;
+        text-align: center;
+        background-color: #172A3A;
+        user-select: none;
+        font-family:Arial, Helvetica, sans-serif;
+        border-bottom: 1px solid black;
+
+        &-img{
+            width: 40px;
+            height: 30px;
+        }
+
+        &-name{
+            margin-top: 4px;
+            margin-left: 14px;
+        }
+    }
+
+    &__link{
+        display: block;
+        color: white;
+        height: 65px;
+        width: 100%;
+        line-height: 65px;
+        padding-left: 30px;
+        border-top: 1px solid rgba(255,255,255,.1);
+        border-left: 5px solid transparent;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+
+        &:hover{
+            border-left: 5px solid #09BC8A;
+            color: #09BC8A;
+            text-decoration: none;
+        }
+
+        &-icon{
+            font-size: 18px;
+            margin-right: 16px;
+        }
+
+        &-span{
+            letter-spacing: 1px;
+        }
+    }
+}
+
+@media (max-width: 860px){
+    .sidebar{
+        height: 385px;
+        width: 70px;
+        left: 0;
+        margin: 100px 0;
+
+        &__header{
+            display: none;
+        }
+
+        &__link{
+            margin-left: -10px;
+
+            // &:hover{
+            //     width: 200px;
+            //     background: inherit;
+            // }
+
+            &-icon{
+                margin-left: -10px;
+            }
+    
+            &-span{
+                position: absolute;
+                margin-left: 23px;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+
+           
+        }     
+
+    }
+
+    .sidebar{
+
+        &__link{
+
+            // &:hover{
+            //     opacity: 1;
+            //     visibility: visible;
+
+            //     // .sidebar__link-span{
+            //     //     opacity: 1;
+            //     //     visibility: visible;
+            //     //     z-index: 100;
+            //     // }
+            // }
+
+            
+        }
+
+
+    }
+}
+
