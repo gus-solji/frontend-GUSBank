@@ -1,4 +1,4 @@
-const DEV_URL = 'http://localhost:8080';
+const DEV_URL = 'https://mariadb-gsjbank.herokuapp.com';
 
 export const EXCHANGE_RATE_URL = 'https://tipodecambio.paginasweb.cr/api'; 
 export const KEY_RATE = 'rate-storage';
